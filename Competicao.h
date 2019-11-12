@@ -4,6 +4,8 @@
 #include <iostream>
 #include <stdexcept>
 #include "Tabela.h"
+#include "Modalidade.h"
+
 
 using namespace std;
 

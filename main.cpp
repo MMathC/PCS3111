@@ -11,7 +11,7 @@ int main(){
     castCar = car;
 
     string nomeArq, castnomeArq;//escolha1 e castEscolha1
-    if castCar == "s"{
+    if (castCar == "s"){
         cout<<"Digite o nome do arquivo: ";
         cin>>nomeArq;
         castnomeArq = nomeArq;

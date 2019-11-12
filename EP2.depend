@@ -6,3 +6,46 @@
 	<iostream>
 	<stdexcept>
 
+1573577337 source:c:\users\10853290\desktop\ep\equipe.cpp
+	"Equipe.h"
+
+1573577337 c:\users\10853290\desktop\ep\equipe.h
+	<iostream>
+	<stdexcept>
+
+1573577337 source:c:\users\10853290\desktop\ep\tabela.cpp
+	<iostream>
+	"Tabela.h"
+
+1573581089 c:\users\10853290\desktop\ep\tabela.h
+	<stdexcept>
+	<iostream>
+	"Equipe.h"
+
+1573581006 source:c:\users\10853290\desktop\ep\tabelacomordem.cpp
+	"TabelaComOrdem.h"
+
+1573581006 c:\users\10853290\desktop\ep\tabelacomordem.h
+	"Tabela.h"
+	<iostream>
+	<stdexcept>
+
+1573577337 source:c:\users\10853290\desktop\ep\realmain.cpp
+	<iostream>
+	"Competicao.h"
+	"Equipe.h"
+	"Modalidade.h"
+	"Tabela.h"
+
+1573581164 c:\users\10853290\desktop\ep\competicao.h
+	<iostream>
+	<stdexcept>
+	"Tabela.h"
+	"Modalidade.h"
+
+1573580781 c:\users\10853290\desktop\ep\modalidade.h
+	<iostream>
+	<stdexcept>
+	"Equipe.h"
+	"TabelaComOrdem.h"
+

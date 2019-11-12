@@ -1,3 +1,6 @@
+#ifndef TABELACOMPONTOS_H
+#define TABELACOMPONTOS_H
+
 #include "Tabela.h"
 
 #include <vector>
@@ -21,3 +24,5 @@ class TabelaComPontos: public Tabela {
   bool inEquipes(Equipe* p);
   bool isResultadoAtualizado = false;
 };
+
+#endif // TABELACOMPONTOS_H

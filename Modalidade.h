@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "Equipe.h"
+#include "TabelaComOrdem.h"
 
 using namespace std;
 

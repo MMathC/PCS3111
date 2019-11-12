@@ -1,7 +1,9 @@
-#include "Modalidade.h"
+#ifndef TABELA_H
+#define TABELA_H
 
 #include <stdexcept>
 #include <iostream>
+#include "Equipe.h"
 
 using namespace std;
 
@@ -22,7 +24,7 @@ protected:
     Equipe** resultado;
 };
 
-
+#endif // TABELA_H
 
 
 

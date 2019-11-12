@@ -1,3 +1,6 @@
+#ifndef TABELACOMORDEM_H
+#define TABELACOMORDEM_H
+
 #include "Tabela.h"
 
 #include <iostream>
@@ -16,3 +19,4 @@ class TabelaComOrdem: public Tabela{
   Equipe** getEquipesEmOrdem();
 };
 
+#endif // TABELACOMORDEM_H
