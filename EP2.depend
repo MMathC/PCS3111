@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1573577337 source:c:\users\10853290\downloads\ep2\ep2\equipe.cpp
+	"Equipe.h"
+
+1573577337 c:\users\10853290\downloads\ep2\ep2\equipe.h
+	<iostream>
+	<stdexcept>
+
