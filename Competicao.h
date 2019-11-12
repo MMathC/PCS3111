@@ -10,28 +10,28 @@
 using namespace std;
 
 class Competicao {
- public:
-  Competicao(string nome, Equipe** equipes, int quantidade, int maximoModalidades);
-  ~Competicao();
+    public:
+    Competicao(string nome, Equipe** equipes, int quantidade, int maximoModalidades);
+    ~Competicao();
 
-  string getNome();
-  Equipe** getEquipes();
-  int getQuantidadeDeEquipes();
+    string getNome();
+    Equipe** getEquipes();
+    int getQuantidadeDeEquipes();
 
-  Modalidade** getModalidades();
-  int getQuantidadeDeModalidades();
+    //Modalidade** getModalidades();
+    //int getQuantidadeDeModalidades();
 
-  virtual Tabela* getTabela() = 0;
-  //void adicionar(Modalidade* m); tabelaMultimodalidade
-  void imprimir();
+    virtual Tabela* getTabela() = 0;
+    //void adicionar(Modalidade* m); tabelaMultimodalidade
+    virtual void imprimir() = 0;
 
- private:
-  string nome;
-  Equipe** equipes;
-  int quantidadeEquipes;
-  Tabela* tabela;
-  Modalidade** modalidades;
-  int quantidadeDeModalidades;
+    private:
+        string nome;
+        Equipe** equipes;
+        int quantidadeEquipes;
+        Tabela* tabela;
+        //Modalidade** modalidades;
+        //int quantidadeDeModalidades;
 };
 
 #endif

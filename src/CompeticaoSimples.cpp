@@ -5,7 +5,14 @@ CompeticaoSimples::CompeticaoSimples(string nome, Equipe** equipes, int quantida
 }
 
 
-CompeticaoSimples::~CompeticaoSimples()
-{
-    //dtor
+CompeticaoSimples::~CompeticaoSimples(){
+}
+
+
+void CompeticaoSimples::imprimir(){
+
+}
+
+Modalidade* CompeticaoSimples::getModalidade(){
+
 }

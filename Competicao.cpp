@@ -7,8 +7,8 @@ Competicao::Competicao(string nome, Equipe** equipes,int quantidade){
     this->nome = nome;
     this->equipes = equipes;
     this->quantidadeEquipes = quantidade;
-    this->modalidades = new Modalidade*[maximoModalidades];
-    this->quantidadeDeModalidades = 0;
+    //this->modalidades = new Modalidade*[maximoModalidades];
+    //this->quantidadeDeModalidades = 0;
 }
 
 Tabela* Competicao::getTabela() {
@@ -80,7 +80,7 @@ bool Competicao::adicionar(Modalidade* m){
 
 }
 
-/*
+/* implemantar para cada classe competição
 void Competicao::imprimir() {
   cout << this->nome << endl;
   this->getTabela()->imprimir();

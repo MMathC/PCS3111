@@ -8,6 +8,9 @@ class CompeticaoSimples
         CompeticaoSimples(string nome, Equipe** equipes, int quantidade, Modalidade* m));
         virtual ~CompeticaoSimples();
 
+        void imprimir();
+        Modalidade* getModalidade();
+
     private:
 
 };
