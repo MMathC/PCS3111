@@ -37,13 +37,13 @@
 	"Modalidade.h"
 	"Tabela.h"
 
-1573581164 c:\users\10853290\desktop\ep\competicao.h
+1573585075 c:\users\10853290\desktop\ep\competicao.h
 	<iostream>
 	<stdexcept>
 	"Tabela.h"
 	"Modalidade.h"
 
-1573580781 c:\users\10853290\desktop\ep\modalidade.h
+1573584509 c:\users\10853290\desktop\ep\modalidade.h
 	<iostream>
 	<stdexcept>
 	"Equipe.h"

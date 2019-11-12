@@ -17,17 +17,18 @@ class Competicao {
   string getNome();
   Equipe** getEquipes();
   int getQuantidadeDeEquipes();
+
   Modalidade** getModalidades();
   int getQuantidadeDeModalidades();
-  Tabela* getTabela();
-  bool adicionar(Modalidade* m);
+
+  virtual Tabela* getTabela() = 0;
+  //void adicionar(Modalidade* m); tabelaMultimodalidade
   void imprimir();
 
  private:
   string nome;
   Equipe** equipes;
   int quantidadeEquipes;
-  int maximoModalidades;
   Tabela* tabela;
   Modalidade** modalidades;
   int quantidadeDeModalidades;

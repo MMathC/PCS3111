@@ -18,7 +18,7 @@ public:
     virtual int getQuantidadeDeEquipes();
 
     virtual bool temResultado();
-    virtual TabelaComOrdem* getTabela(); // probelma aqui
+    virtual TabelaComOrdem* getTabela();
     virtual void setResultado(Equipe** ordem);
 
     virtual void imprimir();

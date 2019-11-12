@@ -1,4 +1,4 @@
-#include "Tabela.h"
+#include "Competicao.h"
 #include <iostream>
 #include <stdexcept>
 
@@ -17,10 +17,9 @@ int main(){
         castnomeArq = nomeArq;
 
         Competicao->imprimir();
-    }
-    int quant, castQuant;
-    string nomeEq, castNomeEq, nomeComp, castNomeComp, escolha2, castEscolha2;
-    else if castCar == "n"{
+    }else if castCar == "n"{
+        int quant, castQuant;
+        string nomeEq, castNomeEq, nomeComp, castNomeComp, escolha2, castEscolha2;
         count<<"Informe a quantidade de equipes: ";
         cin>>quant;
         castQuant = quant;

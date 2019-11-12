@@ -3,22 +3,23 @@
 
 using namespace std;
 
-Competicao::Competicao(string nome, Equipe** equipes,
-		       int quantidade, int maximoModalidades):
-  nome (nome),quantidadeEquipes (quantidade), maximoModalidades (maximoModalidades), equipes (equipes) {
-
-  this->modalidades = new Modalidade*[maximoModalidades];
-  this->quantidadeDeModalidades = 0;
+Competicao::Competicao(string nome, Equipe** equipes,int quantidade){
+    this->nome = nome;
+    this->equipes = equipes;
+    this->quantidadeEquipes = quantidade;
+    this->modalidades = new Modalidade*[maximoModalidades];
+    this->quantidadeDeModalidades = 0;
 }
 
 Tabela* Competicao::getTabela() {
 
-  Tabela* tempTabela = new Tabela(this->equipes, this->quantidadeEquipes);
+  Tabela* tempTabela = new TabelaComPontos(equipes, quantidadeEquipes);//tabela é abstrata e não pode criar objetos(new), tem que ser ou TabelaComOrdem ou TabelaComPontos
 
   for (int i = 0; i < quantidadeDeModalidades; i++){
-    if (modalidades[i]->temResultado()) for (int j = 0; j < modalidades[i]->getQuantidadeDeEquipes(); j++){
-        Equipe* tempEquipe = modalidades[i]->getEquipes()[j];
-        if(modalidades[i]->getPosicao(tempEquipe) == 1) {
+    if (modalidades[i]->temResultado()){
+        for (int j = 0; j < modalidades[i]->getQuantidadeDeEquipes(); j++){
+            Equipe* tempEquipe = modalidades[i]->getEquipes()[j];
+        }if(modalidades[i]->getPosicao(tempEquipe) == 1) {
             tempTabela->pontuar(tempEquipe, 13);
         }else if(modalidades[i]->getPosicao(tempEquipe) == 2){
             tempTabela->pontuar(tempEquipe, 10);
@@ -79,11 +80,12 @@ bool Competicao::adicionar(Modalidade* m){
 
 }
 
+/*
 void Competicao::imprimir() {
   cout << this->nome << endl;
   this->getTabela()->imprimir();
 }
-
+*/
 
 
 
