@@ -7,10 +7,33 @@ Competicao::Competicao(string nome, Equipe** equipes,int quantidade){
     this->nome = nome;
     this->equipes = equipes;
     this->quantidadeEquipes = quantidade;
+
     //this->modalidades = new Modalidade*[maximoModalidades];
     //this->quantidadeDeModalidades = 0;
 }
 
+Competicao::~Competicao(){
+  /*for (int i = 0; i < this->quantidadeDeModalidades; i++){
+    delete this->modalidades[i];
+  }
+  delete[] modalidades;*/
+}
+
+
+string Competicao::getNome(){
+  return this->nome;
+}
+
+Equipe** Competicao::getEquipes(){
+  return this->equipes;
+}
+
+int Competicao::getQuantidadeDeEquipes(){
+  return this->quantidadeEquipes;
+}
+
+
+/*
 Tabela* Competicao::getTabela() {
 
   Tabela* tempTabela = new TabelaComPontos(equipes, quantidadeEquipes);//tabela é abstrata e não pode criar objetos(new), tem que ser ou TabelaComOrdem ou TabelaComPontos
@@ -35,40 +58,23 @@ Tabela* Competicao::getTabela() {
   } return tempTabela;
 }
 
-Competicao::~Competicao(){
-  for (int i = 0; i < this->quantidadeDeModalidades; i++){
-    delete this->modalidades[i];
-  }
-
-  delete[] modalidades;
 
 
-}
-
-
-string Competicao::getNome(){
-  return this->nome;
-}
-
-Equipe** Competicao::getEquipes(){
-  return this->equipes;
-}
-
-int Competicao::getQuantidadeDeEquipes(){
-  return this->quantidadeEquipes;
-}
 
 
 int Competicao::getQuantidadeDeModalidades(){
   return this->quantidadeDeModalidades;
 }
 
+
+
 Modalidade** Competicao::getModalidades(){
   return this->modalidades;
 }
 
 
-bool Competicao::adicionar(Modalidade* m){
+
+void Competicao::adicionar(Modalidade* m){
   if (this->quantidadeDeModalidades < this->maximoModalidades){
 
     this->modalidades[this->quantidadeDeModalidades] = m;
@@ -80,12 +86,11 @@ bool Competicao::adicionar(Modalidade* m){
 
 }
 
-/* implemantar para cada classe competição
+
+implemantar para cada classe competição
 void Competicao::imprimir() {
   cout << this->nome << endl;
   this->getTabela()->imprimir();
 }
 */
-
-
 

@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -44,8 +46,10 @@
 		<Unit filename="TabelaComOrdem.h" />
 		<Unit filename="TabelaComPontos.cpp" />
 		<Unit filename="TabelaComPontos.h" />
+		<Unit filename="include/CompeticaoSimples.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="realMain.cpp" />
+		<Unit filename="src/CompeticaoSimples.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -37,7 +37,7 @@
 	"Modalidade.h"
 	"Tabela.h"
 
-1573585861 c:\users\10853290\desktop\ep\competicao.h
+1573669062 c:\users\10853290\desktop\ep\competicao.h
 	<iostream>
 	<stdexcept>
 	"Tabela.h"
@@ -48,4 +48,13 @@
 	<stdexcept>
 	"Equipe.h"
 	"TabelaComOrdem.h"
+
+1573667200 source:c:\users\10853290\desktop\ep\competicaomultimodalidades.cpp
+	"CompeticaoMultimodalidades.h"
+
+1573667200 c:\users\10853290\desktop\ep\competicaomultimodalidades.h
+
+1573669085 source:c:\users\10853290\desktop\ep\competicao.cpp
+	"Competicao.h"
+	<iostream>
 

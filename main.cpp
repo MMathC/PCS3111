@@ -16,7 +16,7 @@ int main(){
         cin>>nomeArq;
         castnomeArq = nomeArq;
 
-        Competicao->imprimir();
+        //Competicao->imprimir();
     }else if castCar == "n"{
         int quant, castQuant;
         string nomeEq, castNomeEq, nomeComp, castNomeComp, escolha2, castEscolha2;

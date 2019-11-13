@@ -9,9 +9,9 @@
 
 using namespace std;
 
-class Competicao {
+class Competicao{
     public:
-    Competicao(string nome, Equipe** equipes, int quantidade, int maximoModalidades);
+    Competicao(string nome, Equipe** equipes, int quantidade);
     ~Competicao();
 
     string getNome();
@@ -30,6 +30,7 @@ class Competicao {
         Equipe** equipes;
         int quantidadeEquipes;
         Tabela* tabela;
+
         //Modalidade** modalidades;
         //int quantidadeDeModalidades;
 };
