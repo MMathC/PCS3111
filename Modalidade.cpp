@@ -43,8 +43,8 @@ bool Modalidade::temResultado(){
 }
 
 void Modalidade::imprimir(){
-    cout>>"Modalidade: "<<nome<<endl;
-    TabelaComOrdem->imprimir();
+    cout<<"Modalidade: "<<nome<<endl;
+    //TabelaComOrdem->imprimir();
 }
 
 

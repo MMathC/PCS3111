@@ -12,6 +12,7 @@ class CompeticaoSimples:public Competicao{
         Modalidade* getModalidade();
 
     private:
+        Modalidade* m;
 
 };
 

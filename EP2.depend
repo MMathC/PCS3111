@@ -54,7 +54,30 @@
 
 1573667200 c:\users\10853290\desktop\ep\competicaomultimodalidades.h
 
-1573669085 source:c:\users\10853290\desktop\ep\competicao.cpp
+1573669966 source:c:\users\10853290\desktop\ep\competicao.cpp
 	"Competicao.h"
 	<iostream>
+	<stdexcept>
+
+1573669344 source:c:\users\10853290\desktop\ep\competicaosimples.cpp
+	"CompeticaoSimples.h"
+
+1573669919 c:\users\10853290\desktop\ep\competicaosimples.h
+	"Competicao.h"
+
+1573670475 source:c:\users\10853290\desktop\ep\main.cpp
+	"Competicao.h"
+	<iostream>
+	<stdexcept>
+
+1573670593 source:c:\users\10853290\desktop\ep\modalidade.cpp
+	"Modalidade.h"
+
+1573670760 source:c:\users\10853290\desktop\ep\tabelacompontos.cpp
+	"TabelaComPontos.h"
+
+1573581049 c:\users\10853290\desktop\ep\tabelacompontos.h
+	"Tabela.h"
+	<vector>
+	<stdexcept>
 

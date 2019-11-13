@@ -17,28 +17,28 @@ int main(){
         castnomeArq = nomeArq;
 
         //Competicao->imprimir();
-    }else if castCar == "n"{
+    }else if (castCar == "n"){
         int quant, castQuant;
         string nomeEq, castNomeEq, nomeComp, castNomeComp, escolha2, castEscolha2;
-        count<<"Informe a quantidade de equipes: ";
+        cout<<"Informe a quantidade de equipes: ";
         cin>>quant;
         castQuant = quant;
 
-        for(int x=0,i<castQuant,x++){
-            cout>>"Informe o nome da equipe"<< x <<":";
+        for(int x=0;x<castQuant;x++){
+            cout<<"Informe o nome da equipe"<< x <<":";
             cin>>nomeEq;
             castNomeEq = nomeEq;
         }
-        count<<"Informe o nome da competicao: ";
+        cout<<"Informe o nome da competicao: ";
         cin>>nomeComp;
         castNomeComp = nomeComp;
 
-        cout>>"Competicao simples (s) ou multimodalidades (m)? ";
+        cout<<"Competicao simples (s) ou multimodalidades (m)? ";
         cin>>escolha2;
         castEscolha2 = escolha2;
 
         string nomeMod, castNomeMod, result,castResult;
-        if castEscolha2 == "s"{
+        if (castEscolha2 == "s"){
             cout<<"Informe o nome da modalidade: ";
             cin>>nomeMod;
             castNomeMod = nomeMod;
@@ -48,18 +48,19 @@ int main(){
             castResult = result;
 
             int umAn, castUmAn;
-            if castResult == "s"{
-                for(int x = 0, x<castQuant, x++){
+            if (castResult == "s"){
+                for(int x = 0; x<castQuant; x++){
                     cout<<"Informe a equipe "<< x <<"a colocada: ";
                     cin>>umAn;
                     castUmAn = umAn;
                 }
             }
-
-        int m, castm; //quantMod , castQuantMod
-        }else if castEscolha2 == "m"{
+         //quantMod , castQuantMod
+        }else if (castEscolha2 == "m"){
+            int m, castm;
+            string y;
             cout<<"Informe a quantidade de modalidades: ";
-            cin>>m>>endl;
+            cin>>m;
             castm = m;
 
             cout<<"Informe o nome da modalidade "<< y <<":";

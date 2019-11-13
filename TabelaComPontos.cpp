@@ -55,7 +55,7 @@ int TabelaComPontos::getPontos(Equipe* participante){
 
 void TabelaComPontos::imprimir(){
   for (int i = 0; i < quantidadeParticipantes; i++){
-    cout << getPosicao(participantes[i] << "o " << participantes[i]->getNome() << " (" << getPontos(participantes[i]) << " pontos) " << endl;
+    //cout << getPosicao(participantes[i] << "o " << participantes[i]->getNome() << " (" << getPontos(participantes[i]) << " pontos) " << endl; Errado
 
   }
 }

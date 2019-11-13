@@ -1,9 +1,13 @@
 #include "Competicao.h"
 #include <iostream>
+#include<stdexcept>
 
 using namespace std;
 
 Competicao::Competicao(string nome, Equipe** equipes,int quantidade){
+    if(quantidade<2){
+        throw new invalid_argument ("");
+    }
     this->nome = nome;
     this->equipes = equipes;
     this->quantidadeEquipes = quantidade;
