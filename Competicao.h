@@ -24,8 +24,7 @@ class Competicao{
     virtual Tabela* getTabela() = 0;
     //void adicionar(Modalidade* m); tabelaMultimodalidade
     virtual void imprimir() = 0;
-
-    private:
+    protected:
         string nome;
         Equipe** equipes;
         int quantidadeEquipes;
