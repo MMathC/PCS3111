@@ -29,8 +29,8 @@ class Competicao{
         string nome;
         Equipe** equipes;
         int quantidadeEquipes;
-        Tabela* tabela;
 
+        //Tabela* tabela;
         //Modalidade** modalidades;
         //int quantidadeDeModalidades;
 };

@@ -11,8 +11,11 @@ class CompeticaoSimples:public Competicao{
         void imprimir();
         Modalidade* getModalidade();
 
+        Tabela* getTabela();
+
     private:
         Modalidade* m;
+        Tabela* tabela;
 
 };
 

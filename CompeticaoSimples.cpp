@@ -11,8 +11,15 @@ CompeticaoSimples::~CompeticaoSimples(){
 
 void CompeticaoSimples::imprimir(){
     m->imprimir();
+    for(int i = 0; i< quantidadeEquipes; i++){
+        cout<<equipes[i]<<endl;
+    }
 }
 
 Modalidade* CompeticaoSimples::getModalidade(){
 
+}
+
+Tabela* CompeticaoSimples::getTabela(){
+    return m->getTabela();
 }
