@@ -17,7 +17,7 @@ void CompeticaoSimples::imprimir(){
 }
 
 Modalidade* CompeticaoSimples::getModalidade(){
-
+    return m;
 }
 
 Tabela* CompeticaoSimples::getTabela(){

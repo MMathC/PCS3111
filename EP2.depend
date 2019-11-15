@@ -81,3 +81,71 @@
 	<vector>
 	<stdexcept>
 
+1573829698 source:c:\users\matheus\desktop\pcs3111\competicao.cpp
+	"Competicao.h"
+	<iostream>
+	<stdexcept>
+
+1573829698 c:\users\matheus\desktop\pcs3111\competicao.h
+	<iostream>
+	<stdexcept>
+	"Tabela.h"
+	"Modalidade.h"
+
+1573829699 c:\users\matheus\desktop\pcs3111\tabela.h
+	<stdexcept>
+	<iostream>
+	"Equipe.h"
+
+1573834733 c:\users\matheus\desktop\pcs3111\equipe.h
+	<iostream>
+	<stdexcept>
+
+1573843347 c:\users\matheus\desktop\pcs3111\modalidade.h
+	<iostream>
+	<stdexcept>
+	"Equipe.h"
+	"TabelaComOrdem.h"
+
+1573832449 c:\users\matheus\desktop\pcs3111\tabelacomordem.h
+	"Tabela.h"
+	<iostream>
+	<stdexcept>
+
+1573829698 source:c:\users\matheus\desktop\pcs3111\competicaomultimodalidades.cpp
+	"CompeticaoMultimodalidades.h"
+
+1573829698 c:\users\matheus\desktop\pcs3111\competicaomultimodalidades.h
+
+1573842208 source:c:\users\matheus\desktop\pcs3111\competicaosimples.cpp
+	"CompeticaoSimples.h"
+
+1573829698 c:\users\matheus\desktop\pcs3111\competicaosimples.h
+	"Competicao.h"
+
+1573834819 source:c:\users\matheus\desktop\pcs3111\equipe.cpp
+	"Equipe.h"
+
+1573843363 source:c:\users\matheus\desktop\pcs3111\modalidade.cpp
+	"Modalidade.h"
+
+1573829698 source:c:\users\matheus\desktop\pcs3111\tabela.cpp
+	<iostream>
+	"Tabela.h"
+
+1573829699 source:c:\users\matheus\desktop\pcs3111\tabelacomordem.cpp
+	"TabelaComOrdem.h"
+
+1573829699 source:c:\users\matheus\desktop\pcs3111\tabelacompontos.cpp
+	"TabelaComPontos.h"
+
+1573832217 c:\users\matheus\desktop\pcs3111\tabelacompontos.h
+	"Tabela.h"
+	<vector>
+	<stdexcept>
+
+1573841946 source:c:\users\matheus\desktop\pcs3111\main.cpp
+	"Competicao.h"
+	<iostream>
+	<stdexcept>
+

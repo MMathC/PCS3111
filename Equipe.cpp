@@ -9,9 +9,9 @@ Equipe::~Equipe(){
 }
 
 string Equipe::getNome(){
-    return this->nome;
+    return nome;
 }
 
 void Equipe::imprimir(){
-    cout << "Equipe " << this->nome << endl;
+    cout << "Equipe " << nome << endl;
 }

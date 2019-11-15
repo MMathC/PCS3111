@@ -24,11 +24,12 @@ public:
     virtual void imprimir();
 
 private:
+    string nome;
     Equipe** participantes;
     int quantidadeEquipes;
-    string nome;
     bool resultado;
     Modalidade** modalidades[];
+    TabelaComOrdem* novaTab = new TabelaComOrdem(participantes,quantidadeEquipes);
 };
 
 #endif // MODALIDAE_H

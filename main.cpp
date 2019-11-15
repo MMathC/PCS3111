@@ -4,7 +4,47 @@
 
 using namespace std;
 
+int main()
+{
+    Equipe* poli = new Equipe("Poli");
+    Equipe* fea = new Equipe("Fea");
+    Equipe* esalq = new Equipe("Esalq");
+
+    Equipe* participantes[3];
+    participantes[0] = fea;
+    participantes[1] = poli;
+    participantes[2] = esalq;
+
+    Modalidade* futcampo = new Modalidade("Futebol de Campo", participantes, 3);
+    Modalidade* volei = new Modalidade("Volei", participantes, 3);
+    Modalidade* basquete = new Modalidade("Basquete", participantes, 3);
+
+    Equipe* ordem1[3];
+    ordem1[1] = fea;
+    ordem1[0] = poli;
+    ordem1[2] = esalq;
+
+    futcampo -> setResultado(ordem1);
+    futcampo -> imprimir();
+
+    //CompeticaoSimples* compSimples = new CompeticaoSimples("Tusca", participantes, 3, futcampo);
+    //compSimples -> getTabela();
+    //compSimples -> imprimir();
+    return 0;
+}
+/*
 int main(){
+
+   Equipe* equipes[2];
+    Equipe* minhaeq = new Equipe("Poli");
+    Equipe* mina = new Equipe("Fea");
+    equipes[0] = minhaeq;
+    equipes[1] = mina;
+    //Modalidade** m = new Modalidade*[1];
+    equipes[0]->imprimir();
+    equipes[1]->imprimir();
+    //CompeticaoSimples("inter",equipes,2,m)->imprimir();
+
     string car, castCar;
     cout<<"Deseja carregar uma competicao (s/n)? ";
     cin>>car;
@@ -76,3 +116,4 @@ int main(){
     }
 
 }
+*/

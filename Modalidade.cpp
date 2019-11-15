@@ -10,6 +10,7 @@ Modalidade::Modalidade(string nome, Equipe** participantes, int quantidade){
     this->quantidadeEquipes = quantidade;
     this->participantes = participantes;
     this->resultado = false;
+    this->novaTab = novaTab;
 }
 
 Modalidade::~Modalidade(){
@@ -17,26 +18,26 @@ Modalidade::~Modalidade(){
 }
 
 int Modalidade::getQuantidadeDeEquipes(){
-    return this->quantidadeEquipes;
+    return quantidadeEquipes;
 }
 
 Equipe** Modalidade::getEquipes(){
-    return this->participantes;
+    return participantes;
 }
 
 string Modalidade::getNome(){
-    return this->nome;
+    return nome;
 }
 
 void Modalidade::setResultado(Equipe** participantes){
    //implemetar nova logica de setar o resultado
     this->resultado = true;
 }
-/*
+
 TabelaComOrdem* Modalidade::getTabela(){
-  return this->tabela;
+    return novaTab;
 }
-*/
+
 
 bool Modalidade::temResultado(){
   return this->resultado;
