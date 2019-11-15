@@ -3,7 +3,7 @@
 using namespace std;
 
 Modalidade::Modalidade(string nome, Equipe** participantes, int quantidade){
-    if (quantidadeEquipes < 2){
+    if (quantidade < 2){
         throw new invalid_argument("Quantidade de equipes abaixo de 2.");
     }
     this->nome = nome;

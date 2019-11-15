@@ -14,18 +14,21 @@ int main()
     participantes[0] = fea;
     participantes[1] = poli;
     participantes[2] = esalq;
+    poli->imprimir();
+    fea->imprimir();
+    esalq->imprimir();
 
-    Modalidade* futcampo = new Modalidade("Futebol de Campo", participantes, 3);
-    Modalidade* volei = new Modalidade("Volei", participantes, 3);
-    Modalidade* basquete = new Modalidade("Basquete", participantes, 3);
+    //Modalidade* futcampo = new Modalidade("Futebol de Campo", participantes, 3);
+    //Modalidade* volei = new Modalidade("Volei", participantes, 3);
+    //Modalidade* basquete = new Modalidade("Basquete", participantes, 3);
 
-    Equipe* ordem1[3];
-    ordem1[1] = fea;
-    ordem1[0] = poli;
-    ordem1[2] = esalq;
+    //Equipe* ordem1[3];
+    //ordem1[1] = fea;
+    //ordem1[0] = poli;
+    //ordem1[2] = esalq;
 
-    futcampo -> setResultado(ordem1);
-    futcampo -> imprimir();
+    //futcampo -> setResultado(ordem1);
+    //futcampo -> imprimir();
 
     //CompeticaoSimples* compSimples = new CompeticaoSimples("Tusca", participantes, 3, futcampo);
     //compSimples -> getTabela();

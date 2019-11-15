@@ -3,6 +3,10 @@
 using namespace std;
 
 TabelaComOrdem::TabelaComOrdem(Equipe** participantes, int quantidade): Tabela (participantes, quantidade){
+    if(quantidade < 2){
+        throw new invalid_argument ("Quantidade de equipes abaixo de 2.");
+    }
+
 }
 
 TabelaComOrdem::~TabelaComOrdem(){
