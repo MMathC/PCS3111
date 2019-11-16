@@ -1,4 +1,5 @@
 #include "Competicao.h"
+#include"CompeticaoSimples.h"
 #include <iostream>
 #include <stdexcept>
 
@@ -19,20 +20,20 @@ int main()
     esalq->imprimir();
 
     Modalidade* futcampo = new Modalidade("Futebol de Campo", participantes, 3);
-    //Modalidade* volei = new Modalidade("Volei", participantes, 3);
-    //Modalidade* basquete = new Modalidade("Basquete", participantes, 3);
+    Modalidade* volei = new Modalidade("Volei", participantes, 3);
+    Modalidade* basquete = new Modalidade("Basquete", participantes, 3);
 
-    //Equipe* ordem1[3];
-    //ordem1[1] = fea;
-    //ordem1[0] = poli;
-    //ordem1[2] = esalq;
+    Equipe* ordem1[3];
+    ordem1[1] = fea;
+    ordem1[0] = poli;
+    ordem1[2] = esalq;
 
-    //futcampo -> setResultado(ordem1);
-    //futcampo -> imprimir();
+    futcampo -> setResultado(ordem1);
+    futcampo -> imprimir();
 
-    //CompeticaoSimples* compSimples = new CompeticaoSimples("Tusca", participantes, 3, futcampo);
-    //compSimples -> getTabela();
-    //compSimples -> imprimir();
+    CompeticaoSimples* compSimples = new CompeticaoSimples("Tusca", participantes, 3, futcampo);
+    compSimples -> getTabela();
+    compSimples -> imprimir();
     return 0;
 }
 /*
