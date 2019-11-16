@@ -183,7 +183,8 @@
 1573829698 source:c:\users\matheus\desktop\ep\competicaomultimodalidades.cpp
 	"CompeticaoMultimodalidades.h"
 
-1573829698 c:\users\matheus\desktop\ep\competicaomultimodalidades.h
+1573867103 c:\users\matheus\desktop\ep\competicaomultimodalidades.h
+	"Competicao.h"
 
 1573842208 source:c:\users\matheus\desktop\ep\competicaosimples.cpp
 	"CompeticaoSimples.h"
@@ -201,7 +202,7 @@
 	<iostream>
 	"Tabela.h"
 
-1573829699 source:c:\users\matheus\desktop\ep\tabelacomordem.cpp
+1573861415 source:c:\users\matheus\desktop\ep\tabelacomordem.cpp
 	"TabelaComOrdem.h"
 
 1573829699 source:c:\users\matheus\desktop\ep\tabelacompontos.cpp

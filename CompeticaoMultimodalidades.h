@@ -1,16 +1,25 @@
 #ifndef COMPETICAOMULTIMODALIDADES_H
 #define COMPETICAOMULTIMODALIDADES_H
 
+#include <vector>
+#include <list>
+#include "Competicao.h"
 
-class CompeticaoMultimodalidades
-{
+class CompeticaoMultimodalidades:public Competicao{
     public:
-        CompeticaoMultimodalidades();
+        CompeticaoMultimodalidades(string nome, Equipe** equipes, int quantidade);
         virtual ~CompeticaoMultimodalidades();
 
-    protected:
+        void adicionar(Modalidade* m);
+        list<Modalidade*>* getModalidades();
+
+        static void setPontuacao(vector<int>* pontos);
+        static int getPontoPorPosicao(int posicao);
+
+        void imprimir();
 
     private:
+
 };
 
 #endif // COMPETICAOMULTIMODALIDADES_H

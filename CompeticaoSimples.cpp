@@ -4,10 +4,8 @@ CompeticaoSimples::CompeticaoSimples(string nome, Equipe** equipes, int quantida
     this->m = m;
 }
 
-
 CompeticaoSimples::~CompeticaoSimples(){
 }
-
 
 void CompeticaoSimples::imprimir(){
     m->imprimir();

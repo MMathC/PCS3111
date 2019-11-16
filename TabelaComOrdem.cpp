@@ -13,7 +13,8 @@ TabelaComOrdem::~TabelaComOrdem(){
 }
 
 void TabelaComOrdem::setResultado(Equipe** resultado){
-  this->resultado = resultado;
+    //implementar o método de fato
+    this->resultado = resultado;
 }
 
 Equipe** TabelaComOrdem::getEquipesEmOrdem(){
