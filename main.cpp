@@ -18,7 +18,7 @@ int main()
     fea->imprimir();
     esalq->imprimir();
 
-    //Modalidade* futcampo = new Modalidade("Futebol de Campo", participantes, 3);
+    Modalidade* futcampo = new Modalidade("Futebol de Campo", participantes, 3);
     //Modalidade* volei = new Modalidade("Volei", participantes, 3);
     //Modalidade* basquete = new Modalidade("Basquete", participantes, 3);
 
