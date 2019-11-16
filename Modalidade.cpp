@@ -3,39 +3,38 @@
 using namespace std;
 
 Modalidade::Modalidade(string nome, Equipe** participantes, int quantidade){
-    if (quantidade < 2){
-        throw new invalid_argument("Quantidade de equipes abaixo de 2.");
+    if (quantidadeEquipes < 2){
+      throw new invalid_argument("Quantidade de equipes abaixo de 2.");
     }
     this->nome = nome;
     this->quantidadeEquipes = quantidade;
     this->participantes = participantes;
-    this->resultado = false;
-    this->novaTab = novaTab;
+    this->tabela = new TabelaComOrdem(participantes, quantidade);
 }
 
 Modalidade::~Modalidade(){
-
 }
 
 int Modalidade::getQuantidadeDeEquipes(){
-    return quantidadeEquipes;
+    return this->quantidadeEquipes;
 }
 
 Equipe** Modalidade::getEquipes(){
-    return participantes;
+    return this->participantes;
 }
 
 string Modalidade::getNome(){
-    return nome;
+    return this->nome;
 }
 
 void Modalidade::setResultado(Equipe** participantes){
-   //implemetar nova logica de setar o resultado
-    this->resultado = true;
+    tabela->setResultado(participantes);
+    this->resultado = true; 
 }
 
+
 TabelaComOrdem* Modalidade::getTabela(){
-    return novaTab;
+  return this->tabela;
 }
 
 
@@ -44,8 +43,16 @@ bool Modalidade::temResultado(){
 }
 
 void Modalidade::imprimir(){
-    cout<<"Modalidade: "<<nome<<endl;
-    //TabelaComOrdem->imprimir();
+  cout<<"Modalidade: "<< nome << endl;
+  
+  if(temResultado()){
+    tabela->imprimir();
+    
+  } else {
+    for (int i = 0; i < quantidadeEquipes; i++) {
+      cout << participantes[i]->getNome() << endl;
+    }
+  }
 }
 
 

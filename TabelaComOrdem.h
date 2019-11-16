@@ -9,19 +9,14 @@
 using namespace std;
 
 class TabelaComOrdem: public Tabela{
-    public:
-        TabelaComOrdem(Equipe** participantes, int quantidade);
-        virtual ~TabelaComOrdem();
+ public:
+  TabelaComOrdem(Equipe** participantes, int quantidade);
+  virtual ~TabelaComOrdem();
 
-        int getPosicao(Equipe* participante);
-        void setResultado(Equipe** resultado);
-        void imprimir();
-        Equipe** getEquipesEmOrdem();
-    private:
-        Equipe* participantes;
-        int quantidadeParticipantes;
-
-
+  int getPosicao(Equipe* participante);
+  void setResultado(Equipe** resultado);
+  void imprimir();
+  Equipe** getEquipesEmOrdem();
 };
 
 #endif // TABELACOMORDEM_H

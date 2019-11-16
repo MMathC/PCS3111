@@ -1,4 +1,4 @@
-#ifndef MODALIDADE_H
+ #ifndef MODALIDADE_H
 #define MODALIDADE_H
 
 #include <iostream>
@@ -24,12 +24,11 @@ public:
     virtual void imprimir();
 
 private:
-    string nome;
     Equipe** participantes;
     int quantidadeEquipes;
-    bool resultado;
-    Modalidade** modalidades[];
-    TabelaComOrdem* novaTab = new TabelaComOrdem(participantes,quantidadeEquipes);
+    string nome;
+    bool resultado = false;
+    TabelaComOrdem* tabela;
 };
 
 #endif // MODALIDAE_H

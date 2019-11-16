@@ -3,18 +3,13 @@
 using namespace std;
 
 TabelaComOrdem::TabelaComOrdem(Equipe** participantes, int quantidade): Tabela (participantes, quantidade){
-    if(quantidade < 2){
-        throw new invalid_argument ("Quantidade de equipes abaixo de 2.");
-    }
-
 }
 
 TabelaComOrdem::~TabelaComOrdem(){
 }
 
 void TabelaComOrdem::setResultado(Equipe** resultado){
-    //implementar o método de fato
-    this->resultado = resultado;
+  this->resultado = resultado;
 }
 
 Equipe** TabelaComOrdem::getEquipesEmOrdem(){
@@ -22,7 +17,9 @@ Equipe** TabelaComOrdem::getEquipesEmOrdem(){
 }
 
 int TabelaComOrdem::getPosicao(Equipe* participante){
-  return this->getIndice(participante) + 1;
+  for (int i = 0; i < this->quantidadeParticipantes; i++){
+            if(this->resultado[i] == participante) return i + 1;
+        } return -1;
 }
 
 void TabelaComOrdem::imprimir(){
