@@ -22,7 +22,6 @@ class CompeticaoMultimodalidades:public Competicao{
         void imprimir();
 
     private:
-	Tabela* tabela;
 	list<Modalidade*>* listaModalidades;
 	static vector<int>* pontuacao;
 

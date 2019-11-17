@@ -1,7 +1,6 @@
 #include "CompeticaoMultimodalidades.h"
 
 CompeticaoMultimodalidades::CompeticaoMultimodalidades(string nome, Equipe** equipes, int quantidade):Competicao(nome,equipes, quantidade){
-  tabela = new TabelaComPontos(equipes, quantidade);
   listaModalidades = new list<Modalidade*>();
   
 }
@@ -20,7 +19,17 @@ list<Modalidade*>* CompeticaoMultimodalidades::getModalidades(){
 }
 
 Tabela* CompeticaoMultimodalidades::getTabela(){
-  return tabela;
+  TabelaComPontos* tempTabela = new TabelaComPontos(equipes, quantidadeEquipes);
+
+  list<Modalidade*>::iterator mod  = listaModalidades->begin();
+
+  while(mod != listaModalidades->end()){
+    for (int eq = 0; eq < quantidadeEquipes; eq++){
+      tempTabela->pontuar(equipes[eq], getPontoPorPosicao((*mod)->getTabela()->getPosicao(equipes[eq])));				 
+    }
+    mod++;
+  }
+  return tempTabela;  
 }
 
 void CompeticaoMultimodalidades::setPontuacao(vector<int>* pontos){
@@ -38,16 +47,16 @@ void CompeticaoMultimodalidades::setPontuacao(vector<int>* pontos){
   while(i != pontos->end()) {
     CompeticaoMultimodalidades::pontuacao->push_back(*i);
     i++;
-  }
-  
+  }  
 }
 
 
 int CompeticaoMultimodalidades::getPontoPorPosicao(int posicao){
+  if (posicao > CompeticaoMultimodalidades::pontuacao->size()) return 0;
   return CompeticaoMultimodalidades::pontuacao->at(posicao - 1);
   
   }
 
 void CompeticaoMultimodalidades::imprimir(){
-
+  
 }
