@@ -1,0 +1,28 @@
+#include "PersistenciaDeCompeticao.h"
+
+
+PersistenciaDeCompeticao::PersistenciaDeCompeticao(){
+}
+
+PersistenciaDeCompeticao::~PersistenciaDeCompeticao(){
+}
+
+void PersistenciaDeCompeticao::salvar(string arquivo, Competicao* c){
+  ofstream p;
+  p.open(arquivo);
+
+  p << c->getQuantidadeDeEquipes();
+  
+  for (int i = 0; i < c->getQuantidadeDeEquipes(); i++){
+    p << " " << c->getEquipes()[i]->getNome();
+  }
+
+  p << endl;
+  p << c->getNome() << endl;
+
+  if(typeid(c) == typeid(Competicao)) cout << "check" << endl;
+  
+  
+
+  p.close();
+}

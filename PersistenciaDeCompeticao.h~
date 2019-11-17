@@ -1,0 +1,6 @@
+#include "CompeticaoSimples.h"
+#include "CompeticaoMultimodalidades.h"
+#include <fstream>
+
+
+using namespace std;

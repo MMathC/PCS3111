@@ -19,10 +19,12 @@ class TabelaComPontos: public Tabela {
   void pontuar(Equipe* participante, int pontos);
   int getPontos(Equipe* participante);
   Equipe** getEquipesEmOrdem();
+  
  private:
-  vector<int> pontos;
+  vector<int>* pontos;
   bool inEquipes(Equipe* p);
   bool isResultadoAtualizado = false;
+  int getIndice(Equipe* participante);
 };
 
 #endif // TABELACOMPONTOS_H

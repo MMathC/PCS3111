@@ -1,7 +1,10 @@
 #include "Competicao.h"
-#include"CompeticaoSimples.h"
+#include "CompeticaoSimples.h"
+#include "CompeticaoMultimodalidades.h"
 #include <iostream>
 #include <stdexcept>
+#include <vector>
+#include "PersistenciaDeCompeticao.h"
 
 using namespace std;
 
@@ -28,12 +31,48 @@ int main()
     ordem1[0] = poli;
     ordem1[2] = esalq;
 
-    futcampo -> setResultado(ordem1);
-    futcampo -> imprimir();
+    Equipe* ordem2[3];
+    ordem2[0] = fea;
+    ordem2[1] = poli;
+    ordem2[2] = esalq;
 
+    futcampo->setResultado(ordem1);
+    volei->setResultado(ordem2);
+    //basquete->setResultado(ordem1);
+
+    futcampo->imprimir();
+    volei->imprimir();
+    //basquete->imprimir();
+    
+    
     CompeticaoSimples* compSimples = new CompeticaoSimples("Tusca", participantes, 3, futcampo);
-    compSimples -> getTabela();
-    compSimples -> imprimir();
+    cout << compSimples->getTabela() << endl;
+    
+    compSimples->imprimir();
+    
+
+    CompeticaoMultimodalidades* multi = new CompeticaoMultimodalidades("TUSCA", participantes,3);
+
+    multi->adicionar(futcampo);
+    multi->adicionar(volei);
+    multi->adicionar(basquete);
+
+    vector<int>* tabelaPontos = new vector<int>({13, 10, 8, 7, 5, 4, 3, 2, 1});
+
+    multi->setPontuacao(tabelaPontos);
+
+
+
+    multi->imprimir();
+
+    PersistenciaDeCompeticao* persistencia = new PersistenciaDeCompeticao();
+    //persistencia->salvar("Multi.txt", multi);
+    persistencia->salvar("Simples.txt", compSimples);
+    
+    
+
+    
+    
     return 0;
 }
 /*

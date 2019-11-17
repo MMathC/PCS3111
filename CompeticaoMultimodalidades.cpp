@@ -24,11 +24,17 @@ Tabela* CompeticaoMultimodalidades::getTabela(){
   list<Modalidade*>::iterator mod  = listaModalidades->begin();
 
   while(mod != listaModalidades->end()){
+ 
     for (int eq = 0; eq < quantidadeEquipes; eq++){
-      tempTabela->pontuar(equipes[eq], getPontoPorPosicao((*mod)->getTabela()->getPosicao(equipes[eq])));				 
+      tempTabela->pontuar(equipes[eq], getPontoPorPosicao((*mod)->getTabela()->getPosicao(equipes[eq])));
+      
     }
     mod++;
   }
+
+  //teste
+  
+  
   return tempTabela;  
 }
 
@@ -37,11 +43,11 @@ void CompeticaoMultimodalidades::setPontuacao(vector<int>* pontos){
     throw new invalid_argument("");
   }
 
-  vector<int>::iterator j = pontos->end();
-  while(j != pontos->begin()){
-    CompeticaoMultimodalidades::pontuacao->pop_back();
-    j--;
+  if (CompeticaoMultimodalidades::pontuacao->size() != 0) {
+    delete CompeticaoMultimodalidades::pontuacao;
+    CompeticaoMultimodalidades::pontuacao = new vector<int>();
   }
+
   
   vector<int>::iterator i = pontos->begin();
   while(i != pontos->end()) {
@@ -58,5 +64,6 @@ int CompeticaoMultimodalidades::getPontoPorPosicao(int posicao){
   }
 
 void CompeticaoMultimodalidades::imprimir(){
-  
+  cout <<  nome << endl;
+  getTabela()->imprimir();
 }
