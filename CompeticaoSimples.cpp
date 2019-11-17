@@ -16,5 +16,5 @@ Modalidade* CompeticaoSimples::getModalidade(){
 }
 
 Tabela* CompeticaoSimples::getTabela(){
-    return m->getTabela();
+  return m->getTabela();
 }
