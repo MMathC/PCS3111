@@ -144,24 +144,69 @@ Competicao* PersistenciaDeCompeticao::carregar(string arquivo){
     competicao = new CompeticaoMultimodalidades(nomeCompeticao,
 						equipes,
 						qntEquipes);
-    CompeticaoMultimodalidades* competicao =
+    CompeticaoMultimodalidades* competicaoMulti =
       dynamic_cast<CompeticaoMultimodalidades*>(competicao);
     
     int qntModalidades;
     p >> qntModalidades;
 
     for (int nMod = 0; nMod < qntModalidades; nMod++) {
-      Modalidade* tempMod;
+      //Modalidade* tempMod;
       
-      //construir modalidade
+      string nomeModalidade;
+      bool isResultado;
+      int qntEquipesParticipantes;   
 
-      competicao->adicionar(tempMod);
+      p >> nomeModalidade;
+      p >> isResultado;
+      p >> qntEquipesParticipantes;
+
       
 
+      //
+    
+      list<string>* nomeEquipesPartipantes = new list<string>();
+
+    
+      Equipe** equipesParticipantes = new Equipe*[qntEquipesParticipantes];
+
+     
+
+      
+    
+      for (int i = 0; i < qntEquipesParticipantes; i++){
+	string nomeEquipe;
+	p >> nomeEquipe;
+	nomeEquipesPartipantes->push_back(nomeEquipe);
+      }
+    
+
+    
+      for (int i = 0; i < qntEquipesParticipantes; i++) {
+	equipesParticipantes[i] = findEquipe(nomeEquipesPartipantes->front(), equipes, qntEquipes);
+	nomeEquipesPartipantes->pop_front();
+      }
+
+    
+
+    Modalidade* tempMod = new  Modalidade(nomeModalidade,
+				equipesParticipantes,
+				qntEquipes);
+
+    
+    if(isResultado) {
+      tempMod->setResultado(equipesParticipantes);
+    } 
+
+
+    competicaoMulti->adicionar(tempMod);
+   
+
+    
+      
     }
-    
-    
-    return competicao;
+
+    return competicaoMulti;
     
   } else {
 
@@ -203,13 +248,12 @@ Competicao* PersistenciaDeCompeticao::carregar(string arquivo){
     } 
     
     competicao = new CompeticaoSimples(nomeCompeticao, equipes, qntEquipes, modalidade);
-    return competicao;
     
     
   }
   
   p.close();
-  return NULL;
+  return competicao;
 }
 
 Equipe* PersistenciaDeCompeticao::findEquipe(string nomeEquipe, Equipe** equipes, int quantidade){

@@ -1,4 +1,3 @@
-#include "Competicao.h"
 #include "CompeticaoSimples.h"
 #include "CompeticaoMultimodalidades.h"
 #include <iostream>
@@ -19,7 +18,6 @@ int main()
     participantes[0] = fea;
     participantes[1] = poli;
     participantes[2] = esalq;
-
     //poli->imprimir();
     //fea->imprimir();
     //esalq->imprimir();
@@ -40,7 +38,7 @@ int main()
 
     futcampo->setResultado(ordem1);
     volei->setResultado(ordem2);
-    //basquete->setResultado(ordem1);
+    basquete->setResultado(ordem1);
 
     //futcampo->imprimir();
     //volei->imprimir();
@@ -68,25 +66,31 @@ int main()
     //multi->imprimir();
 
     PersistenciaDeCompeticao* persistencia = new PersistenciaDeCompeticao();
-    //persistencia->salvar("Multi.txt", multi);
-    persistencia->salvar("Simples.txt", compSimples);
+    persistencia->salvar("Multi.txt", multi);
+    //persistencia->salvar("Simples.txt", compSimples);
 
 
-    //CompeticaoSimples* cs =
-    //  dynamic_cast<CompeticaoSimples*>
-    //  (persistencia->carregar("Simples.txt"));
-    //cs->imprimir();
+    Competicao* c = persistencia->carregar("Multi.txt");
 
+    CompeticaoMultimodalidades* cCast =
+      dynamic_cast<CompeticaoMultimodalidades*>(c);
+
+    cCast->imprimir();
+
+    
 
 
     return 0;
 }
 
-
  /*
+
 int main(){
 
     string car, castCar;
+    string salvar, castSalvar;
+    string nomeArquivo, castnomeArquivo;
+
     cout<<"Deseja carregar uma competicao (s/n)? ";
     cin>>car;
     castCar = car;
@@ -100,7 +104,10 @@ int main(){
 
         PersistenciaDeCompeticao* arquivo = new PersistenciaDeCompeticao();
 
-        //arquivo->carregar(castnomeArq);
+        Competicao* oii = arquivo->carregar(castnomeArq);
+      
+	CompeticaoMultimodalidades* castC = dynamic_cast<CompeticaoMultimodalidades*>(oii);
+	castC->imprimir();
 
 
     }else if (castCar == "n"){
@@ -108,18 +115,18 @@ int main(){
         int quant, castQuant;
         string nomeEq, castNomeEq, nomeComp, castNomeComp, SouM, castSimpOuMult;
 
-        cout<<"Informe a quantidade de equipes: ";
+        cout<<"\nInforme a quantidade de equipes: ";
         cin>>quant;
         castQuant = quant;
 
-        Equipe* equipes[castQuant];
+        Equipe** equipes = new Equipe*[castQuant];
         for(int x = 0;x<castQuant;x++){
             cout<<"Informe o nome da equipe "<< x+1 <<": ";
             cin>>nomeEq;
             castNomeEq = nomeEq;
 
-            Equipe* minha_equipe = new Equipe(castNomeEq);
-            equipes[x] = minha_equipe;
+            //Equipe* minha_equipe = new Equipe(castNomeEq);
+            equipes[x] = new Equipe(castNomeEq);
             //cout<<equipes[x]<<endl;
         }
         cout<<"\nInforme o nome da competicao: ";
@@ -127,7 +134,7 @@ int main(){
         castNomeComp = nomeComp;
 
 
-        cout<<"Competicao simples (s) ou multimodalidades (m)? ";
+        cout<<"\nCompeticao simples (s) ou multimodalidades (m)? ";
         cin>>SouM;
         castSimpOuMult = SouM;
 
@@ -152,69 +159,116 @@ int main(){
             int umAn, castUmAn;
             if (castResult == "s"){
                 for(int x = 0; x<castQuant; x++){
-                    cout<<"Informe a equipe "<< x <<"a colocada: ";
+                    cout<<"Informe a equipe "<< x+1 <<"a colocada: ";
                     cin>>umAn;
                     castUmAn = umAn;
                 }
             }else if(castResult == "n"){
 
-                string salvar, castSalvar;
                 cout<<"Deseja salvar a competicao (s/n)? ";
                 cin>>salvar;
                 castSalvar = salvar;
 
                 if(castSalvar == "s"){
-                       string nomeArquivo, castnomeArquivo;
+
 
                     cout<<"Digite o nome do arquivo: "<<endl;
                     cin>>nomeArquivo;
                     castnomeArquivo = nomeArquivo;
+
+                    cout<<""<<endl;
                     CompSimples->imprimir();
                 }else if(castSalvar == "n"){
+
+                    cout<<""<<endl;
                     CompSimples->imprimir();
                 }
 
             }
          //quantMod , castQuantMod
         }else if (castSimpOuMult == "m"){
-            int m, castm;
+            int m, castm, PosEq, castPosEq;
             string y;
-            int PosEq, castPosEq;
 
-            cout<<"Informe a quantidade de modalidades: ";
+            cout<<"\nInforme a quantidade de modalidades: ";
             cin>>m;
             castm = m;
 
-            for(int y = 1, y<= castm, y++){
-                cout<<"Informe o nome da modalidade "<< y <<":";
-                cin>>nomeMod;
-                castNomeMod = nomeMod;
 
-                cout<<"Tem resultado (s/n): ";
-                cin>>result;
-                castResult = result;
+            for(int y = 1; y<= castm; y++){
+                if(y==1){
+                    cout<<"Informe o nome da modalidade "<< y <<":";
+                    cin>>nomeMod;
+                    castNomeMod = nomeMod;
 
-                if(castResult == s){
+                    cout<<"Tem resultado (s/n): ";
+                    cin>>result;
+                    castResult = result;
 
-                    Equipe** ordem = new Equipe(castNomeEq);
-                    for(int i = 1; i <= castQuant,i++){
-                        cout<<"Informe a equipe "<< i <<"a colocada: "<<endl;
-                        cin>>PosEq;
-                        castPosEq = PosEq -1;
+                    if(castResult == "s"){
 
-                        ordem[i-1] = equipes[castPosEq];
+                        Equipe** ordem = new Equipe*[castQuant];
+                        for(int i = 1; i <= castQuant;i++){
+                            cout<<"Informe a equipe "<< i <<"a colocada: ";
+                            cin>>PosEq;
+                            castPosEq = PosEq -1;
+
+                            ordem[i-1] = equipes[castPosEq];
+                        }
+                        TabelaComOrdem* tabOrd = new TabelaComOrdem(equipes, castQuant);
+                        tabOrd->setResultado(ordem);
                     }
-                    TabelaComOrdem* tabOrd = new TabelaComOrdem(equipes, castQuant);
-                    tabOrd->setResultado(ordem);
+                    if(y > castm)break;
+                }else{
+                    cout<<"\nInforme o nome da modalidade "<< y <<":";
+                    cin>>nomeMod;
+                    castNomeMod = nomeMod;
+
+                    cout<<"Tem resultado (s/n): ";
+                    cin>>result;
+                    castResult = result;
+
+                    if(castResult == "s"){
+
+                        Equipe** ordem = new Equipe*[castQuant];
+                        for(int i = 1; i <= castQuant;i++){
+                            cout<<"Informe a equipe "<< i <<"a colocada: ";
+                            cin>>PosEq;
+                            castPosEq = PosEq -1;
+
+                            ordem[i-1] = equipes[castPosEq];
+                        }
+                        TabelaComPontos* tabPont = new TabelaComPontos(equipes, castQuant);
+                        tabPont->getEquipesEmOrdem();
+                    }
+                    if(y > castm)break;
                 }
-                if(y > castm)break;
             }
         }
-        cout<<"Deseja salvar a competicao (s/n)? ";
-        cin>>
+        CompeticaoMultimodalidades* compMult = new CompeticaoMultimodalidades(castNomeComp,equipes,castQuant);
+        cout<<"\nDeseja salvar a competicao (s/n)? ";
+        cin>>salvar;
+        castSalvar = salvar;
+
+        if(castSalvar == "s"){
+            cout<<"Digite o nome do arquivo: ";
+            cin>>nomeArquivo;
+            castnomeArquivo = nomeArquivo;
+
+            PersistenciaDeCompeticao* save = new PersistenciaDeCompeticao();
+
+            save->salvar(castnomeArquivo,compMult);
+
+            cout<<""<<endl;
+            compMult->imprimir();
+            compMult->getTabela()->imprimir();
+        }else if (castSalvar == "n"){
+            cout<<""<<endl;
+            compMult->imprimir();
+            compMult->getTabela()->imprimir();
+        }
 
     }
 
 }
-
 */
