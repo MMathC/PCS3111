@@ -8,7 +8,7 @@
 
 using namespace std;
 
-/*
+
 int main()
 {
     Equipe* poli = new Equipe("Poli");
@@ -19,11 +19,12 @@ int main()
     participantes[0] = fea;
     participantes[1] = poli;
     participantes[2] = esalq;
-    poli->imprimir();
-    fea->imprimir();
-    esalq->imprimir();
 
-    Modalidade* futcampo = new Modalidade("Futebol de Campo", participantes, 3);
+    //poli->imprimir();
+    //fea->imprimir();
+    //esalq->imprimir();
+
+    Modalidade* futcampo = new Modalidade("FutebolDeCampo", participantes, 3);
     Modalidade* volei = new Modalidade("Volei", participantes, 3);
     Modalidade* basquete = new Modalidade("Basquete", participantes, 3);
 
@@ -41,15 +42,15 @@ int main()
     volei->setResultado(ordem2);
     //basquete->setResultado(ordem1);
 
-    futcampo->imprimir();
-    volei->imprimir();
+    //futcampo->imprimir();
+    //volei->imprimir();
     //basquete->imprimir();
 
 
     CompeticaoSimples* compSimples = new CompeticaoSimples("Tusca", participantes, 3, futcampo);
-    cout << compSimples->getTabela() << endl;
+    //cout << compSimples->getTabela() << endl;
 
-    compSimples->imprimir();
+    //compSimples->imprimir();
 
 
     CompeticaoMultimodalidades* multi = new CompeticaoMultimodalidades("TUSCA", participantes,3);
@@ -64,20 +65,25 @@ int main()
 
 
 
-    multi->imprimir();
+    //multi->imprimir();
 
     PersistenciaDeCompeticao* persistencia = new PersistenciaDeCompeticao();
     //persistencia->salvar("Multi.txt", multi);
-    persistencia->salvar("Simples.txt", compSimples);
+    //persistencia->salvar("Simples.txt", compSimples);
 
 
+    CompeticaoSimples* cs =
+      dynamic_cast<CompeticaoSimples*>
+      (persistencia->carregar("Simples.txt"));
+    cs->imprimir();
 
 
 
     return 0;
 }
-*/
 
+
+ /*
 int main(){
 
     string car, castCar;
@@ -211,3 +217,4 @@ int main(){
 
 }
 
+*/

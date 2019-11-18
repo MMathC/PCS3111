@@ -145,9 +145,7 @@ Competicao* PersistenciaDeCompeticao::carregar(string arquivo){
 
     string nomeModalidade;
     bool isResultado;
-    int qntEquipesParticipantes;
-    
-    
+    int qntEquipesParticipantes;   
 
     p >> nomeModalidade;
     p >> isResultado;
@@ -156,16 +154,17 @@ Competicao* PersistenciaDeCompeticao::carregar(string arquivo){
     
     
     list<string>* nomeEquipesPartipantes = new list<string>();
+
     
     Equipe** equipesParticipantes = new Equipe*[qntEquipesParticipantes];
 
-    cout << "hello" << endl;
+    
     for (int i = 0; i < qntEquipesParticipantes; i++){
       string nomeEquipe;
       p >> nomeEquipe;
       nomeEquipesPartipantes->push_back(nomeEquipe);
     }
-    cout << "hello" << endl;
+    
 
     
     for (int i = 0; i < qntEquipesParticipantes; i++) {
@@ -176,9 +175,12 @@ Competicao* PersistenciaDeCompeticao::carregar(string arquivo){
     
 
     Modalidade* modalidade = new Modalidade(nomeModalidade, equipesParticipantes, qntEquipes);
+
+    if(isResultado) {
+      modalidade->setResultado(equipesParticipantes);
+    } 
     
     competicao = new CompeticaoSimples(nomeCompeticao, equipes, qntEquipes, modalidade);
-    
     return competicao;
     
     

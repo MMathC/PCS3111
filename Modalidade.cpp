@@ -45,14 +45,19 @@ bool Modalidade::temResultado(){
 void Modalidade::imprimir(){
   cout<< nome << endl;
 
-  if(temResultado()){
+  if(resultado){
     tabela->imprimir();
+    cout << "hello" << endl;
 
   } else {
+    cout << "chegou" << endl;
     for (int i = 0; i < quantidadeEquipes; i++) {
       cout << "    " << participantes[i]->getNome() << endl;
     }
+    
   }
+
+  
 }
 
 

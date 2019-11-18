@@ -8,7 +8,15 @@ CompeticaoSimples::~CompeticaoSimples(){
 
 void CompeticaoSimples::imprimir(){
   cout << nome << endl;
-  m->getTabela()->imprimir();
+
+  if(m->temResultado()){
+    m->getTabela()->imprimir();
+
+  } else {
+    for (int i = 0; i < quantidadeEquipes; i++) {
+      cout << "    " << equipes[i]->getNome() << endl;
+    }
+  }
 }
 
 Modalidade* CompeticaoSimples::getModalidade(){

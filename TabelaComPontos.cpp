@@ -23,7 +23,6 @@ Equipe** TabelaComPontos::getEquipesEmOrdem(){
     for (int i = 0; i < quantidadeParticipantes; i++){
       if (getPosicao(participantes[i]) == pos) {
 	resultado[indice] = participantes[i];
-	//cout << resultado[indice]->getNome() << endl;;
 	indice++;
 	}
     }
@@ -72,8 +71,5 @@ int TabelaComPontos::getPontos(Equipe* participante){
 void TabelaComPontos::imprimir(){
   for (int i = 0; i < quantidadeParticipantes; i++){
     cout << getPosicao(getEquipesEmOrdem()[i]) << "o " << getEquipesEmOrdem()[i]->getNome() << " (" << getPontos(getEquipesEmOrdem()[i]) << " pontos) " <<  endl;
-    }  
-  
-  
-
+    }   
 }

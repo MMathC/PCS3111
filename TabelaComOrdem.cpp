@@ -2,7 +2,8 @@
 
 using namespace std;
 
-TabelaComOrdem::TabelaComOrdem(Equipe** participantes, int quantidade): Tabela (participantes, quantidade){  
+TabelaComOrdem::TabelaComOrdem(Equipe** participantes, int quantidade): Tabela (participantes, quantidade) {
+  this->resultado = participantes;
 }
 
 TabelaComOrdem::~TabelaComOrdem(){
