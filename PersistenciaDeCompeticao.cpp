@@ -1,4 +1,5 @@
 #include "PersistenciaDeCompeticao.h"
+#include <list>
 
 
 PersistenciaDeCompeticao::PersistenciaDeCompeticao(){
@@ -87,13 +88,111 @@ void PersistenciaDeCompeticao::salvar(string arquivo, Competicao* c){
 	p << " ";
 	p << ordemS[i]->getNome();
       }
-      cout << (*modalidade)->getNome() << endl;
       p << endl;
       modalidade++;
     }    
   }
   
   p << endl;
+  p << "\n";
   p.close();
   
+}
+
+
+
+Competicao* PersistenciaDeCompeticao::carregar(string arquivo){
+
+  
+  ifstream p;
+  p.open(arquivo);
+
+  
+  
+  if (p.fail()) throw new invalid_argument("arquivo não encontrado.");
+  Competicao* competicao;
+  int qntEquipes;
+  Equipe** equipes;
+  string nomeCompeticao;
+  bool isMulti;
+
+ 
+  
+  p >> qntEquipes;
+  equipes = new Equipe*[qntEquipes];
+
+
+   
+   for (int i = 0; i < qntEquipes; i++){ // erro de caminho     
+    string tempNome;
+    p >> tempNome;
+    equipes[i] = new Equipe(tempNome);
+    
+  }
+
+  
+
+  
+  p >> nomeCompeticao;
+
+  p >> isMulti;
+
+  
+
+  if(isMulti) {
+    cout << "multi" << endl;
+  } else {
+
+    string nomeModalidade;
+    bool isResultado;
+    int qntEquipesParticipantes;
+    
+    
+
+    p >> nomeModalidade;
+    p >> isResultado;
+    p >> qntEquipesParticipantes;
+
+    cout << "hello" << endl;
+
+    string* nomeEquipesPartipantes = new string[qntEquipesParticipantes];
+    
+    Equipe** equipesParticipantes = new Equipe*[qntEquipesParticipantes];
+
+    
+    for (int i = 0; i < qntEquipesParticipantes; i++){
+      string nomeEquipe;
+      p >> nomeEquipe;
+      nomeEquipesPartipantes[i] = nomeEquipe;
+    }
+
+    
+    for (int i = 0; i < qntEquipesParticipantes; i++) {
+      equipesParticipantes[i] = findEquipe(nomeEquipesPartipantes[i], equipes, qntEquipes);
+    }
+
+    
+
+    Modalidade* modalidade = new Modalidade(nomeModalidade, equipesParticipantes, qntEquipes);
+    
+    competicao = new CompeticaoSimples(nomeCompeticao, equipes, qntEquipes, modalidade);
+    
+    return competicao;
+
+    
+  }
+  
+  p.close();
+  
+  
+
+  return NULL;
+}
+
+Equipe* PersistenciaDeCompeticao::findEquipe(string nomeEquipe, Equipe** equipes, int quantidade){
+  for (int i = 0; i < quantidade; i++){
+    if (equipes[i]->getNome() == nomeEquipe) return equipes[i];
+  }
+
+  return NULL;
 }

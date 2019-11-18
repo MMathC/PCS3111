@@ -16,6 +16,8 @@ class PersistenciaDeCompeticao{
 
   Competicao* carregar(string arquivo);
   void salvar(string arquivo, Competicao* c);
+ private:
+  Equipe* findEquipe(string nomeEquipe, Equipe** equipes, int quantidade);
 
 };
 

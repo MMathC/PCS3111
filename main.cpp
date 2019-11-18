@@ -67,10 +67,12 @@ int main()
     //multi->imprimir();
 
     PersistenciaDeCompeticao* persistencia = new PersistenciaDeCompeticao();
-    persistencia->salvar("Multi.txt", multi);
-    //persistencia->salvar("Simples.txt", compSimples);
+    //persistencia->salvar("Multi.txt", multi);
+    persistencia->salvar("Simples.txt", compSimples);
     
+    Competicao* simples = persistencia->carregar("Simples.txt");
     
+    //cout << simples << endl;
 
     
     
