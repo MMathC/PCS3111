@@ -69,13 +69,13 @@ int main()
 
     PersistenciaDeCompeticao* persistencia = new PersistenciaDeCompeticao();
     //persistencia->salvar("Multi.txt", multi);
-    //persistencia->salvar("Simples.txt", compSimples);
+    persistencia->salvar("Simples.txt", compSimples);
 
 
-    CompeticaoSimples* cs =
-      dynamic_cast<CompeticaoSimples*>
-      (persistencia->carregar("Simples.txt"));
-    cs->imprimir();
+    //CompeticaoSimples* cs =
+    //  dynamic_cast<CompeticaoSimples*>
+    //  (persistencia->carregar("Simples.txt"));
+    //cs->imprimir();
 
 
 

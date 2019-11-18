@@ -140,7 +140,29 @@ Competicao* PersistenciaDeCompeticao::carregar(string arquivo){
   
 
   if(isMulti) {
-    cout << "multi" << endl;
+
+    competicao = new CompeticaoMultimodalidades(nomeCompeticao,
+						equipes,
+						qntEquipes);
+    CompeticaoMultimodalidades* competicao =
+      dynamic_cast<CompeticaoMultimodalidades*>(competicao);
+    
+    int qntModalidades;
+    p >> qntModalidades;
+
+    for (int nMod = 0; nMod < qntModalidades; nMod++) {
+      Modalidade* tempMod;
+      
+      //construir modalidade
+
+      competicao->adicionar(tempMod);
+      
+
+    }
+    
+    
+    return competicao;
+    
   } else {
 
     string nomeModalidade;

@@ -47,7 +47,6 @@ void Modalidade::imprimir(){
 
   if(resultado){
     tabela->imprimir();
-    cout << "hello" << endl;
 
   } else {
     cout << "chegou" << endl;
