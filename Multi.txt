@@ -1,4 +1,11 @@
 3 Fea Poli Esalq
 TUSCA
-
+1
+3
+Futebol de Campo
+1 3 Poli Fea Esalq
+Volei
+1 3 Fea Poli Esalq
+Basquete
+1 3 Poli Fea Esalq
 

@@ -20,40 +20,80 @@ void PersistenciaDeCompeticao::salvar(string arquivo, Competicao* c){
   p << endl;
   p << c->getNome();
   p << endl;
-
-  CompeticaoSimples* verificaTipo = dynamic_cast<CompeticaoSimples*>(c);
-  bool isSimples = (verificaTipo != NULL);
-  delete verificaTipo;
-
+       
+  
+  CompeticaoSimples* compVerificacao = dynamic_cast<CompeticaoSimples*>(c);
+       
+  bool isSimples = (compVerificacao != NULL);
+  
+    
+    
   if (isSimples) {
+    CompeticaoSimples* compSimples = dynamic_cast<CompeticaoSimples*>(c);
 
-    
-    
     p << "0";
     p << endl;
 
-   
+    p << compSimples->getModalidade()->getNome();
+    p << endl;
+
+    p << compSimples->getModalidade()->temResultado();
+    p << " ";
+    p << compSimples->getQuantidadeDeEquipes();
+
+    Equipe** ordemS;
     
-    //p << endl;
-    /*
-    p << c->getModalidade()->temResultado() << " "
-      << c->getModalidade()->getQuantidadeDeEquipes();;
-    
-    
-    if (c->getModalidade()->temResultado()) {
-      for (int i = 0; i < c->getModalidade()->getQuantidadeDeEquipes(); i++)
-	p << " " << c->getModalidade()->getTabela()->getEquipesEmOrdem()[i]->getNome();
+    if(compSimples->getModalidade()->temResultado()){
+      ordemS = compSimples->getModalidade()->getTabela()->getEquipesEmOrdem();
     } else {
-      for (int i = 0; i < c->getModalidade()->getQuantidadeDeEquipes(); i++)
-	p << " " << c->getModalidade()->getEquipes()[i]->getNome();
+      ordemS = compSimples->getModalidade()->getEquipes();
     }
-    */
+    
+
+    for (int i = 0; i < c->getQuantidadeDeEquipes(); i++){
+      p << " ";
+      p << ordemS[i]->getNome();
+    }
     
   } else {
 
+    CompeticaoMultimodalidades* compMulti = dynamic_cast<CompeticaoMultimodalidades*>(c);
+
+    p << "1";
+    p << endl;
+    p << compMulti->getModalidades()->size();
+    p << endl;
+
+    list<Modalidade*>::iterator modalidade = compMulti->getModalidades()->begin();
+
+    while(modalidade != compMulti->getModalidades()->end()){
+      p << (*modalidade)->getNome();
+      p << endl;
+      
+      
+      p << (*modalidade)->temResultado();
+      p << " ";
+      p << (*modalidade)->getQuantidadeDeEquipes();
+
+      Equipe** ordemS;
+    
+      if((*modalidade)->temResultado()){
+        ordemS = (*modalidade)->getTabela()->getEquipesEmOrdem();
+      } else {
+        ordemS = (*modalidade)->getEquipes();
+      }
+      
+      for (int i = 0; i < c->getQuantidadeDeEquipes(); i++){
+	p << " ";
+	p << ordemS[i]->getNome();
+      }
+      cout << (*modalidade)->getNome() << endl;
+      p << endl;
+      modalidade++;
+    }    
   }
   
   p << endl;
-
   p.close();
+  
 }
