@@ -71,8 +71,9 @@ int main()
     persistencia->salvar("Simples.txt", compSimples);
     
     Competicao* simples = persistencia->carregar("Simples.txt");
-    
-    //cout << simples << endl;
+
+    cout << "ok" << endl;
+    simples->imprimir();
 
     
     

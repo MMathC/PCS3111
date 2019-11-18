@@ -159,7 +159,7 @@ Competicao* PersistenciaDeCompeticao::carregar(string arquivo){
     
     Equipe** equipesParticipantes = new Equipe*[qntEquipesParticipantes];
 
-    cout << "hello" << endl;
+    cout << "hello" << endl;dads
     for (int i = 0; i < qntEquipesParticipantes; i++){
       string nomeEquipe;
       p >> nomeEquipe;
@@ -170,7 +170,7 @@ Competicao* PersistenciaDeCompeticao::carregar(string arquivo){
     
     for (int i = 0; i < qntEquipesParticipantes; i++) {
       equipesParticipantes[i] = findEquipe(nomeEquipesPartipantes->front(), equipes, qntEquipes);
-      nomeEquipesPartipantes->pop_front();
+      nomeEquipesPartipantes->pop_front(); 
     }
 
     
