@@ -8,6 +8,12 @@
 using namespace std;
 
 
+
+
+
+
+
+/*
 int main()
 {
     Equipe* poli = new Equipe("Poli");
@@ -81,36 +87,45 @@ int main()
 
 
     return 0;
-}
+    }*/
 
- /*
+ 
 
 int main(){
 
-    string car, castCar;
-    string salvar, castSalvar;
-    string nomeArquivo, castnomeArquivo;
+    string car;
+    string salvar;
+    string nomeArquivo;
 
     cout<<"Deseja carregar uma competicao (s/n)? ";
-    cin>>car;
-    castCar = car;
+    cin >> car;
+    
 
 
-    string nomeArq, castnomeArq;//escolha1 e castEscolha1
-    if (castCar == "s"){
-        cout<<"\nDigite o nome do arquivo: ";
-        cin>>nomeArq;
-        castnomeArq = nomeArq;
+    string nomeArq;
+    if (car == "s"){
+        cout << "\nDigite o nome do arquivo: ";
+        cin >> nomeArq;
+        
 
         PersistenciaDeCompeticao* arquivo = new PersistenciaDeCompeticao();
 
-        Competicao* oii = arquivo->carregar(castnomeArq);
+        Competicao* comp = arquivo->carregar(nomeArq);
+
+	CompeticaoSimples* compSimples = dynamic_cast<CompeticaoSimples*>(comp);
+
+	bool isSimples = (compSimples != NULL);
+
+	if (isSimples) {
+	  compSimples->imprimir();
+	} else {
+	  CompeticaoMultimodalidades* compMulti = dynamic_cast<CompeticaoMultimodalidades*>(comp);
+	  compMulti->imprimir();
+	}
       
-	CompeticaoMultimodalidades* castC = dynamic_cast<CompeticaoMultimodalidades*>(oii);
-	castC->imprimir();
 
 
-    }else if (castCar == "n"){
+    } /*else if (castCar == "n"){
 
         int quant, castQuant;
         string nomeEq, castNomeEq, nomeComp, castNomeComp, SouM, castSimpOuMult;
@@ -269,6 +284,6 @@ int main(){
         }
 
     }
-
+      */
 }
-*/
+

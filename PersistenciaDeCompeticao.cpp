@@ -206,6 +206,7 @@ Competicao* PersistenciaDeCompeticao::carregar(string arquivo){
       
     }
 
+    //Competicao* cReturn = CompeticaoMulti;
     return competicaoMulti;
     
   } else {

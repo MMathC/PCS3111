@@ -5,7 +5,7 @@ CompeticaoMultimodalidades::CompeticaoMultimodalidades(string nome, Equipe** equ
   
 }
 
-vector<int>* CompeticaoMultimodalidades::pontuacao = new vector<int>();
+vector<int>* CompeticaoMultimodalidades::pontuacao = new vector<int>({13, 10, 8, 7, 5, 4, 3, 2, 1});
   
 CompeticaoMultimodalidades::~CompeticaoMultimodalidades(){
 }

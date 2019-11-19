@@ -60,7 +60,7 @@ void TabelaComPontos::pontuar(Equipe* participante, int pontos){
   if (!inEquipes(participante)) throw new invalid_argument("Equipe não pertence a tabela.");
   
   this->pontos->at(getIndice(participante)) += pontos;
-  isResultadoAtualizado = false;
+  isResultadoAtualizado = false; 
 }
 
 int TabelaComPontos::getPontos(Equipe* participante){
